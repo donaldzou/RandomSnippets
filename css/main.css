@@ -1,0 +1,174 @@
+body{
+    font-family: 'Roboto Mono', monospace;
+    background-color: #232323;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.walletHeader{
+    margin: 3rem auto 0 auto;
+    width: 384px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.walletHeader h1, .walletHeader span{
+    font-size: 2rem !important;
+    transition: all .4s;
+}
+
+.walletHeader.small h1, .walletHeader.small span{
+    font-size: 1.5rem !important;
+}
+
+
+.addBtn{
+    color: white;
+
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.cardList{
+    margin: 0 auto;
+    flex-direction: column;
+    display: flex;
+}
+
+.card{
+    width: 350px;
+    background-color: #fe3e59;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid #661621;
+    z-index: 100;
+    cursor: pointer;
+    transition: all .4s cubic-bezier(0.42, 0, 0.19, 1.01);
+}
+
+.card.active + .card{
+    margin-top: 0;
+}
+
+.card.active~.card{
+    transform: translateY(100px);
+    opacity: 0;
+    filter: blur(5px);
+}
+
+.card.hide{
+    transform: scale(0.75);
+    filter: blur(5px);
+}
+
+.card.hide:not(:first-child){
+    margin-top: -560px;
+}
+
+.card:not(:first-child){
+    margin-top: -510px;
+}
+
+.card:hover{
+    transform: translateY(-20px);
+}
+
+@keyframes bounce-3 {
+    0%   { transform: translateY(-1px); }
+    50%  { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.card.active:hover{
+    transform: translateY(0);
+}
+
+.card:not(:first-child).active{
+    transition: all .4s cubic-bezier(1, -0.29, 0.18, 1.09);
+    margin-top: -560px;
+    animation: bounce-3 1s;
+    animation-delay: 0.05s;
+}
+
+.slide{
+    opacity: 0;
+}
+
+.slide:not(:first-child){
+    margin-top: -560px;
+}
+
+.cardHeader{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.card p, .card h2{
+    margin: 0;
+}
+
+.cardHeader .cardMainHeader{
+    font-weight: bold;
+}
+
+.cardHeader .cardSubHeader{
+    margin-left: auto;
+}
+
+.cardInfoGrid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cardInfo{
+    margin-bottom: 1rem;
+}
+
+.cardInfo p{
+    font-weight: lighter;
+}
+
+.cardInfoName{
+    color: #862127;
+    text-transform: uppercase;
+}
+
+.qrcode{
+    width: 200px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.cardQrcode{
+    padding-top: 1rem;
+    text-align: center;
+}
