@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Folder</title>
+    <link href="css/folder.css" rel="stylesheet">
+</head>
+<body>
+    <section class="folderGrid">
+        <div class="folders">
+            <div class="folder">
+                <div class="icon" style='background-image: url("images/folder/calculator-1575939.svg")'>
+                    <p class="appName">Calculator</p>
+                </div>
+                <div class="icon" style='background-image: url("images/folder/calendar-2365233.svg")'>
+                    <p class="appName">Calendar</p>
+                </div>
+                <div class="icon" style='background-image: url("images/folder/camera-2365232.svg")'>
+                    <p class="appName">Camera</p>
+                </div>
+                <div class="icon" style='background-image: url("images/folder/clips-1575951.svg")'>
+                    <p class="appName">Clips</p>
+                </div>
+                <div class="icon" style='background-image: url("images/folder/contacts-2365230.svg")'>
+                    <p class="appName">Contacts</p>
+                </div>
+                <div class="icon" style='background-image: url("images/folder/facetime-1575950.svg")'>
+                    <p class="appName">FaceTime</p>
+                </div>
+                <div class="icon" style='background-image: url("images/folder/health-2365228.svg")'>
+                    <p class="appName">Health</p>
+                </div>
+                <div class="icon" style='background-image: url("images/folder/news-2365224.svg")'>
+                    <p class="appName">News</p>
+                </div>
+                <div class="icon" style='background-image: url("images/folder/voice-memos-1575942.svg")'>
+                    <p class="appName">Voice Memos</p>
+                </div>
+                <div class="folderName">Essentials</div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    let $folderOpened = null;
+    let $folder = $(".folder");
+
+
+    $folder.on("click", function(e){
+        if ($folderOpened){
+            $folderOpened = null
+            $(this).removeClass("opened")
+        }else{
+            $folderOpened = $(this)
+            $(this).addClass("opened")
+        }
+
+
+
+    });
+
+    // $folder.each(function(index, element){
+    //     $(element).data('orig-x', $(element).position().left);
+    //     $(element).data('orig-y', $(element).position().top);
+    // });
+    //
+    // function reset() {
+    //     if ($folderOpened) {
+    //         let origX = $folderOpened.data('orig-x');
+    //         $($folderOpened).css("transform", `translateX(0) scale(1)`)
+    //         setTimeout(function(){
+    //             $folderOpened.css("z-index", 1000)
+    //             $folderOpened = null;
+    //         },500)
+    //
+    //     }
+    // };
+    //
+    // $folder.on("click", function(e){
+    //     if ($folderOpened != null){
+    //         reset();
+    //         return
+    //     }
+    //
+    //     console.log($(this).position())
+    //     $folderOpened = $(this);
+    //     let $document = $(document);
+    //     let centreX = $document.width() / 2;
+    //     let centreY = $document.height() / 2;
+    //     let folder = $(this);
+    //     let origX = folder.data('orig-x');
+    //     let origY = folder.data('orig-y');
+    //     $(this).css("z-index", 1001);
+    //
+    //     setTimeout(function(){
+    //         let i = centreX - origX - 250.5;
+    //         $folderOpened.css("transform", `scale(1.5) translateX(${i}px)`)
+    //     },100)
+    //     console.log($folderOpened.outerWidth())
+    // })
+</script>
+</html>
